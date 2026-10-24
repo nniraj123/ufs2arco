@@ -106,6 +106,13 @@ target), missing surface pressure, invalid local pressure ordering, and
 targets without an eligible bracket or recovery remain NaN. Recovery does not
 use a higher-pressure pair or higher-pressure nearest neighbor.
 
+.. figure:: images/corrected_atmos_pressure_interpolation_new.png
+   :alt: 850 hPa interpolation, bounded recovery, and below-ground masking
+   :width: 100%
+
+   At 850 hPa, columns A and B use two-sided interpolation, C uses bounded
+   recovery, and D is masked because the target is below ground.
+
 ``variables_with_nans`` prevents expected terrain masks from marking an entire
 date missing. It does not fill NaNs or configure the training loss. Training
 still requires an appropriate mask or fill policy. Temporal-residual

@@ -180,6 +180,14 @@ target bin only when its midpoint is at or above this interface. A retained
 bin may straddle the bottom; only wet cells contribute to its average. This
 midpoint policy is not an exact fractional-bottom-cell calculation.
 
+.. figure:: images/OceanRegrid_corrected.png
+   :alt: Valid-weight averaging and seafloor masking during ocean vertical regridding
+   :width: 100%
+
+   Two seafloor examples: each variable excludes nonfinite values from its
+   averaging weights, and the bottom mask uses the interface below the last
+   contiguous wet ``temp`` layer.
+
 ``weight_var`` defaults to ``dz`` and names the calculated native thicknesses.
 With ``keep_weight_var: true``, the retained weight is the nominal full target
 bin thickness, not each variable's finite or local wet thickness.
